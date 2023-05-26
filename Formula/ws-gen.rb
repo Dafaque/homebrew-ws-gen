@@ -11,17 +11,17 @@ class WsGen < Formula
   depends_on "go"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_amd64.tar.gz"
-      sha256 "755aeacafa02795747668afd4b3e2cbf8962ffcbc23596f5a688ddf4d61b623a"
+    if Hardware::CPU.arm?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_arm64.tar.gz"
+      sha256 "6acfd617ad70c1d729e476cc3125b221e20d1d9757ff7d25595628758841d80c"
 
       def install
         bin.install "ws-gen"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_arm64.tar.gz"
-      sha256 "cb79d9d45dadf18b2309d3483647854a532cc0ad40bd7b86b84d6857df662a97"
+    if Hardware::CPU.intel?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_amd64.tar.gz"
+      sha256 "3f7f01cabdde562bb3c893f45ba51f1b274dc98a8eeca5e84bdbc96aa3fc3c9d"
 
       def install
         bin.install "ws-gen"
@@ -32,7 +32,7 @@ class WsGen < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_amd64.tar.gz"
-      sha256 "0410b9b2a5ffafe6450c7413db47298c9881956e64da8357afbd13d107f9bb5f"
+      sha256 "d2a4a8602fdb98b0caf770c4004b21d7eb39a6187fec192de909e2caf47b5d04"
 
       def install
         bin.install "ws-gen"
@@ -40,7 +40,7 @@ class WsGen < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_arm64.tar.gz"
-      sha256 "d5c4beb282ee4f1f1f16a7eb357e0d93a51a836b548a94c20f07b4f332154811"
+      sha256 "b81cca0fcbd08df8a0c631f7257f51ae70a85326b811e3d1352aa6bfd89b9961"
 
       def install
         bin.install "ws-gen"
