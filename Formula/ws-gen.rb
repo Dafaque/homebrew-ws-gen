@@ -11,17 +11,17 @@ class WsGen < Formula
   depends_on "go"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_arm64.tar.gz"
-      sha256 "548a46acc57a968e14666941669cf50e13ed94dbc7147595dbbece8fad7419bb"
+    if Hardware::CPU.intel?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_amd64.tar.gz"
+      sha256 "755aeacafa02795747668afd4b3e2cbf8962ffcbc23596f5a688ddf4d61b623a"
 
       def install
         bin.install "ws-gen"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_amd64.tar.gz"
-      sha256 "dcf032406a6d051c67182561b52860d9ccebabf10c7ba260195767cb4e981002"
+    if Hardware::CPU.arm?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_darwin_arm64.tar.gz"
+      sha256 "cb79d9d45dadf18b2309d3483647854a532cc0ad40bd7b86b84d6857df662a97"
 
       def install
         bin.install "ws-gen"
@@ -30,17 +30,17 @@ class WsGen < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_arm64.tar.gz"
-      sha256 "73c46aec302bb14ceb816a946a81b1a56c1157babcd4b443f04f108cdaa38bb2"
+    if Hardware::CPU.intel?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_amd64.tar.gz"
+      sha256 "0410b9b2a5ffafe6450c7413db47298c9881956e64da8357afbd13d107f9bb5f"
 
       def install
         bin.install "ws-gen"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_amd64.tar.gz"
-      sha256 "26f12acdb1b30f1c25764d82e0aec791611b35a4fad124fb4d6b44be9692a38a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Dafaque/ws-gen/releases/download/v3.1.0/ws-gen_3.1.0_linux_arm64.tar.gz"
+      sha256 "d5c4beb282ee4f1f1f16a7eb357e0d93a51a836b548a94c20f07b4f332154811"
 
       def install
         bin.install "ws-gen"
