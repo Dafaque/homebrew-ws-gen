@@ -5,23 +5,23 @@
 class WsGen < Formula
   desc "WebSocket client and server generation tool"
   homepage "https://github.com/dafaque/ws-gen"
-  version "0.5.1"
+  version "0.6.0"
   license "TBA"
 
   depends_on "go"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/dafaque/ws-gen/releases/download/v0.5.1/ws-gen_0.5.1_darwin_amd64.tar.gz"
-      sha256 "38c1306a71823467c57515ff84faf43302e535b3ab5309adf64338a0db30c83c"
+    if Hardware::CPU.arm?
+      url "https://github.com/dafaque/ws-gen/releases/download/v0.6.0/ws-gen_0.6.0_darwin_arm64.tar.gz"
+      sha256 "5eabc51fecf969260bce3a42619f3f865e2688c1a9aaf7f6f3c0c37e9f87965b"
 
       def install
         bin.install "ws-gen"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/dafaque/ws-gen/releases/download/v0.5.1/ws-gen_0.5.1_darwin_arm64.tar.gz"
-      sha256 "c2c1220cb8c2581e6aea8aff9fc4165101211fc413f9eabb06db036b432fa80f"
+    if Hardware::CPU.intel?
+      url "https://github.com/dafaque/ws-gen/releases/download/v0.6.0/ws-gen_0.6.0_darwin_amd64.tar.gz"
+      sha256 "713d426cbe807c375722c1b87cdec0dfc71b49025f7cda9a94210e331461f595"
 
       def install
         bin.install "ws-gen"
@@ -31,16 +31,16 @@ class WsGen < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dafaque/ws-gen/releases/download/v0.5.1/ws-gen_0.5.1_linux_amd64.tar.gz"
-      sha256 "bb0f2f11e953d1fdf47492331ac56a33ecca1ac2a432ecab3b0abee6860b7af2"
+      url "https://github.com/dafaque/ws-gen/releases/download/v0.6.0/ws-gen_0.6.0_linux_amd64.tar.gz"
+      sha256 "d09463f790bca7458e597b84d48f428ae4fd8803969b3c41bbab71db4375365b"
 
       def install
         bin.install "ws-gen"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dafaque/ws-gen/releases/download/v0.5.1/ws-gen_0.5.1_linux_arm64.tar.gz"
-      sha256 "3bcc867119d238c31b6232c1af88849ddeaa37c0ede88a4b01a6bdcc57d332f9"
+      url "https://github.com/dafaque/ws-gen/releases/download/v0.6.0/ws-gen_0.6.0_linux_arm64.tar.gz"
+      sha256 "7d0a254b28641f55fcc455a6c12f798fb6acbb34a9c84b8f45bb66d315385847"
 
       def install
         bin.install "ws-gen"
